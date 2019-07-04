@@ -2,9 +2,9 @@ from django.core.management.base import BaseCommand
 from backend.api.models import Pokemon, Types, Evolution
 import json
 
-# TODO: Updaten funktioniert nicht richtig.
-class Command(BaseCommand):
 
+class Command(BaseCommand):
+    # TODO: Updaten funktioniert nicht richtig.
     def handle(self, *args, **options):
         path = './backend/import/pokemon-v1.json'
         with open(path) as file:
@@ -19,6 +19,8 @@ class Command(BaseCommand):
                     )
                     if created_type:
                         print("New Type created: ", type_object.name)
+                    else:
+                        print("Type: " + type_object.name + " has been updated")
 
                     type_object.save()
                 for evolution in pokemon['evolutions']:
@@ -33,6 +35,8 @@ class Command(BaseCommand):
                     )
                     if created_evolution:
                         print("New Evolution created: ", evolution_object.next_evolution_key)
+                    else:
+                        print("Evolution: " + evolution_object.next_evolution_key + " has been updated")
 
                     evolution_object.save()
 
@@ -40,6 +44,7 @@ class Command(BaseCommand):
                     id=pokemon['_id'],
                     defaults={
                         'id': pokemon['_id'],
+                        'number': pokemon['pkdx_id'],
                         'name': pokemon['name'],
                         'image': pokemon['art_url'],
                         'description': pokemon['description'],
@@ -47,15 +52,16 @@ class Command(BaseCommand):
                 )
                 if created_pokemon:
                     print("New Pokemon created: ", pokemon_object.name)
+                else:
+                    print("Pokemon: " + pokemon_object.name + " has been updated")
 
-                for type in pokemon['types']:
-                    pokemon_object.types.add(Types.objects.get(name=type))
+                for typ in pokemon['types']:
+                    pokemon_object.types.add(Types.objects.get(name=typ))
 
-                for pokemon in Pokemon.objects.all():
+                for pokemons in Pokemon.objects.all():
                     for evolution in Evolution.objects.all().filter(pre_evolution_key=pokemon_object.name):
                         pokemon_object.evolutions.add(evolution)
 
                 pokemon_object.save()
 
-
-
+        print("Finished :)")

@@ -27,7 +27,7 @@ class PokemonSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Pokemon
-        fields = ('id', 'name', 'image', 'description', 'types', 'evolutions')
+        fields = ('id', 'number', 'name', 'image', 'description', 'types', 'evolutions')
 
 
 

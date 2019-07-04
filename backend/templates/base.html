@@ -1,12 +1,13 @@
+{% load static %}
 <html>
   <head>
-    <script src="./assets/js/models/Pokemon.model.js"></script>
-    <script src="./assets/js/services/pokemonService.getApiData.js"></script>
-    <script src="./assets/js/services/pokemonService.getAllPokemon.js"></script>
-    <script src="./assets/js/services/pokemonService.searchAllPokemon.js"></script>
-    <script src="./assets/js/services/pokemonService.getLocalSoragePokemon.js"></script>
-    <script src="./assets/js/services/pokemonService.serveGlobalVariables.js"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="{% static 'js/models/Pokemon.model.js' %}"></script>
+    <script src="{% static 'js/services/pokemonService.getApiData.js' %}"></script>
+    <script src="{% static 'js/services/pokemonService.getAllPokemon.js' %}"></script>
+    <script src="{% static 'js/services/pokemonService.searchAllPokemon.js' %}"></script>
+    <script src="{% static 'js/services/pokemonService.getLocalSoragePokemon.js' %}"></script>
+    <script src="{% static 'js/services/pokemonService.serveGlobalVariables.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
     <div class="header">
@@ -16,6 +17,6 @@
         {% block content %}
         {% endblock content %}
     </div>
-    <script src="./assets/js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>
