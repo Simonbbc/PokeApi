@@ -23,7 +23,8 @@ router.register(r'users', views.UserViewSet)
 router.register(r'pokemon', views.PokemonViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', views.pokemon_list, name='pokemon_list'),
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

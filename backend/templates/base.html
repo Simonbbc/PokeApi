@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script src="./assets/js/models/Pokemon.model.js"></script>
+    <script src="./assets/js/services/pokemonService.getApiData.js"></script>
+    <script src="./assets/js/services/pokemonService.getAllPokemon.js"></script>
+    <script src="./assets/js/services/pokemonService.searchAllPokemon.js"></script>
+    <script src="./assets/js/services/pokemonService.getLocalSoragePokemon.js"></script>
+    <script src="./assets/js/services/pokemonService.serveGlobalVariables.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <div class="header">
+        {% include './partials/header.html' %}
+    </div>
+    <div class="main">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

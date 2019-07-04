@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 from backend.api.models import Pokemon, Types, Evolution
 import json
 
-
+# TODO: Updaten funktioniert nicht richtig.
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
