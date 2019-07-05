@@ -21,3 +21,6 @@ class PokemonViewSet(viewsets.ModelViewSet):
 def pokemon_list(request):
     return render(request, 'api/home_page.html', {})
 
+
+def pokemon_detail(request):
+    return render(request, 'api/detail_page.html', {})

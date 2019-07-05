@@ -26,6 +26,8 @@ router.register(r'pokemon', views.PokemonViewSet)
 
 urlpatterns = [
     path('', views.pokemon_list, name='pokemon_list'),
+    # TODO: Detal view.
+    # path('pokemon/<int:pk>/', views.pokemon_detail, name='detail_view'),
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))

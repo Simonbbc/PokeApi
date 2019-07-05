@@ -82,7 +82,7 @@ async function run() {
  * @returns
  */
 function setDataField(pokemon) {
-    return `<h1>${pokemon.id}</h1><img class="loading" src=${pokemon.image} alt=${pokemon.name}><h2><a href="./detailView.html?pokeId=${pokemon.id}">${pokemon.name}</a></h2>`;
+    return `<h1>${pokemon.id}</h1><img class="loading" src=${pokemon.image} alt=${pokemon.name}><h2><a href="{% url 'detail_view' pk=${pokemon.id} %}">${pokemon.name}</a></h2>`;
 }
 
 async function deleteErrorMessage() {
