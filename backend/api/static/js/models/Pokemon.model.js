@@ -1,7 +1,7 @@
 /**
- *
- *
- * @param {*} pokemon
+ * This is our Pokemon model.
+ * it gets its values from the passed JSON object.
+ * @param {*} pokemon JSON object
  */
 function Pokemon(pokemon) {
     this.id = pokemon.number;
