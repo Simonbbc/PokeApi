@@ -1,5 +1,5 @@
 //get all data from json api
-async function getData(currentPage) {
-    const pokemonResponse = await fetch(`http://localhost:8000/api/pokemon/?page=${currentPage}`);
+async function getData() {
+    const pokemonResponse = await fetch(`http://localhost:8000/api/pokemon/`);
     return await pokemonResponse.json();
 }

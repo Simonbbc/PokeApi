@@ -1,3 +1,3 @@
 async function createCleanedPokemon(list) {
-    return list.results.map(pokemon => new Pokemon(pokemon));
+    return list.map(pokemon => new Pokemon(pokemon));
 }

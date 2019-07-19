@@ -2,7 +2,7 @@ async function checkForSearchInput() {
     searchInput.addEventListener('keyup', async event => {
         debugger;
         let filteredList = pokemonList.filter(pokemon => pokemon.name.toUpperCase().includes(searchInput.value.toUpperCase()));
-        if(filteredList.length > 0 && filteredList.length < 721) {
+        if(filteredList.length > 0 && filteredList.length < 718) {
             await deleteErrorMessage();
             await clearDisplayList();
             for(let i = 0; i < filteredList.length; i++) {
